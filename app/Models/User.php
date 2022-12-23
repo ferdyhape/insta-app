@@ -48,4 +48,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Feed::class, 'user_id', 'id');
     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+    public function like_details()
+    {
+        return $this->hasMany(LikeDetail::class, 'user_id', 'id');
+    }
 }
