@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Feed;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class PageController extends Controller
     {
         return view('relationship_tes', [
             "title" => "Relationship Test",
-            "feed" => Feed::all()
+            "feed" => Feed::all(),
+            "comment" => Comment::all(),
         ]);
     }
 }
