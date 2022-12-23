@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('feeds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user');
+            $table->foreignId('user_id');
             $table->longText('caption');
+            $table->integer('like')->nullable();
             $table->string('picture_path');
             $table->timestamps();
         });
