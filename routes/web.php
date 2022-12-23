@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::get('/register', [AuthController::class, 'register'])->name('register')->
 Route::post('/register', [AuthController::class, 'registerStore'])->name('store_process');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('authenticate_process');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout_process');
+
+Route::get('/relat', [PageController::class, 'relationship_test'])->name('relationship');
