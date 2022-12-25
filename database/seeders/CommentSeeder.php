@@ -30,10 +30,5 @@ class CommentSeeder extends Seeder
             'user_id' => 1,
             'content' => 'ggwp'
         ]);
-        Comment::create([
-            'feed_id' => 3,
-            'user_id' => 2,
-            'content' => 'ntapss',
-        ]);
     }
 }
