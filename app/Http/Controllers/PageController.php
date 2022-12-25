@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Feed;
+use App\Models\LikeDetail;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,18 @@ class PageController extends Controller
         return view('user.my-profile', [
             "title" => "My Profile",
             "feed" => Feed::where('user_id', auth()->user()->id)->get(),
+        ]);
+    }
+    public function notifications()
+    {
+        // date_default_timezone_set('Asia/Jakarta');
+        // $dateNowIndonesia = date('Y-m-d H:i:s');
+
+        $feed_user = Feed::where('user_id', auth()->user()->id)->where('like', '>', '0')->get();
+        return view('user.my-notifications', [
+            "title" => "My Notification",
+            "liked" => $feed_user,
+            // "dateNow" => $dateNowIndonesia,
         ]);
     }
 }

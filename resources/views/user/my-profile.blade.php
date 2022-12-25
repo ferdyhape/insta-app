@@ -31,7 +31,7 @@
 
     <section class="row gallery my-5 justify-content-center">
         @foreach ($feed as $f)
-        <div class="card col-sm-3 m-1 border-0 shadow-sm" style="width: 18rem; position: unset;">
+        <div class="card col-sm-3 m-1 border-0 shadow-sm gallery-item" style="width: 18rem; position: unset;">
             <img class="card-img-top" src="{{ asset('storage/'.$f->picture_path)}}" alt="Card image cap">
         </div>
         @endforeach

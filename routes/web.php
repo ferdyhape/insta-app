@@ -16,6 +16,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout_process'
 
 Route::get('/relat', [PageController::class, 'relationship_test'])->name('relationship');
 Route::get('/my_profile', [PageController::class, 'my_profile'])->name('my-profile');
+Route::get('/notifications', [PageController::class, 'notifications'])->name('notifications');
+
+
 Route::get('/like/{id}', [LikeController::class, 'like'])->name('like_process');
 
 // Route::resource('/feed', FeedController::class)->middleware('auth');
