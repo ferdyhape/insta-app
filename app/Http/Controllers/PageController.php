@@ -17,4 +17,11 @@ class PageController extends Controller
             "comment" => Comment::all(),
         ]);
     }
+    public function my_profile()
+    {
+        return view('user.my-profile', [
+            "title" => "My Profile",
+            "feed" => Feed::where('user_id', auth()->user()->id)->get(),
+        ]);
+    }
 }

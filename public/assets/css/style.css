@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 100px;
+    width: 72%;
+    height: auto;
+}
+
+body {
+    width: 100%;
+    background: #fafafa;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.nav-wrapper {
+    width: 70%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.brand-img {
+    height: 100%;
+    margin: 5px 0;
+}
+
+.nav-items {
+    height: 22px;
+    position: relative;
+}
+
+.nav-icon {
+    color: black;
+    height: 100%;
+    cursor: pointer;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.user-profile {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: cover;
+}
+
+.main {
+    width: 100%;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.wrapper {
+    width: 70%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-gap: 30px;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-wrapper {
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    padding: 10px;
+    padding-top: 35px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.status-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.status-card {
+    flex: 0 0 auto;
+    width: 80px;
+    max-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.post {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    margin-top: 20px;
+}
+
+.info {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.profile-pict {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-pict img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.username {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+.info .username {
+    width: auto;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.info .options {
+    height: 10px;
+    cursor: pointer;
+    color: #000;
+}
+
+.info .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.info .profile-pict {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background: none;
+}
+
+.info .profile-pict img {
+    border: none;
+}
+
+.post-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.post-content {
+    width: 100%;
+    padding: 20px 20px 0 20px;
+}
+
+.likes {
+    font-weight: bold;
+}
+
+.description {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.description-comment {
+    margin: 5px 0 0 3px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.description span {
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.description-comment .comment {
+    font-weight: bold;
+    margin-right: 3px;
+    opacity: 0.8;
+}
+
+.comment-wrapper {
+    width: 100%;
+    height: 50px;
+    border-radius: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.comment-wrapper .icon {
+    height: 30px;
+    align-items: center;
+    display: inline;
+}
+
+.comment-box {
+    width: 90%;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    left: 0;
+}
+
+.reaction-wrapper {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reaction-wrapper .icon {
+    height: 25px;
+    margin: 0px 20px 5px 0;
+    font-size: 25px;
+}
+
+.comment-btn {
+    border: 0;
+    background: none;
+    color: blue;
+}
+
+.left-content {
+    display: grid;
+    padding-right: 50px;
+}
+
+.img-profile {
+    width: 180px;
+    height: 180px;
+    border: 1px solid #dfdfdf;
+}
+
+.edit-profile {
+    height: 40px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #dfdfdf;
+}
+
+.edit-profile:hover {
+    background-color: #dfdfdf;
+}
+
+.gallery img {
+    object-fit: cover;
+    height: 300px;
+}
+
+.username-profile {
+    font-weight: 300;
+}
