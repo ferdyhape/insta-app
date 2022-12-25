@@ -45,8 +45,15 @@
                 </div>
                 <div class="comment-wrapper">
                     <p class="icon pt-1 m-0"><i class="fa-sharp fa-solid fa-comment"></i></p>
-                    <input type="text" class="comment-box" placeholder="Add a comment..">
-                    <a href="" class="comment-btn"><i class="fa-solid fa-paper-plane"></i></a>
+                    <form method="POST" action="/comment" class="signin-form d-flex justify-content-between"
+                        style="width: 95%;">
+                        @csrf
+                        <input type="hidden" id="user_id" name="user_id" value="{{ auth()->user()->id }}">
+                        <input type="hidden" id="feed_id" name="feed_id" value="{{ $f->id }}">
+                        <input type="text" class="comment-box" name="content" placeholder="Add a comment..">
+                        <button type="submit" class="comment-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                    {{-- <a href="" class="comment-btn"><i class="fa-solid fa-paper-plane"></i></a> --}}
                 </div>
             </div>
             @endforeach
