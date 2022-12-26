@@ -15,7 +15,9 @@
                     </div>
                     <a href="#" class="options"><i class="fa-solid fa-bars"></i></a>
                 </div>
-                <img src="{{ asset('storage/'.$f->picture_path)}}" class="post-image mt-2" alt="">
+                <a href="feed/{{ $f->id }}">
+                    <img src="{{ asset('storage/'.$f->picture_path)}}" class="post-image mt-2" alt="">
+                </a>
                 <div class="post-content">
                     <div class="reaction-wrapper">
                         @php
@@ -35,12 +37,13 @@
 
                         <a href="" class="icon text-dark"><i class="fa-regular fa-comment"></i></a>
                     </div>
-                    {{ $liked == true ? "Saya sudah menyukai" : "Saya tidak suka" }}
+                    {{ $liked == true ? "Anda sudah menyukai postingan ini" : "" }}
                     <p class="likes mb-0">{{$f->like }} Likes</p>
                     <p class="description"><span>{{$f->user->name }} </span>{{$f->caption }}</p>
                     <hr class="hr mt-2 mb-2">
                     @foreach ($f->comments as $c)
-                    <p class="description-comment"><span class="comment">{{$c->user->name }} </span>{{$c->content }}</p>
+                    <p class="description-comment"><span class="comment">{{$c->user->name }} </span>{{$c->content }}
+                    </p>
                     @endforeach
                 </div>
                 <div class="comment-wrapper">

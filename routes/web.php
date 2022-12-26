@@ -17,6 +17,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout_process'
 Route::get('/relat', [PageController::class, 'relationship_test'])->name('relationship');
 Route::get('/my_profile', [PageController::class, 'my_profile'])->name('my-profile');
 Route::get('/notifications', [PageController::class, 'notifications'])->name('notifications');
+Route::get('/', [PageController::class, 'auto_redirect'])->name('home');
 
 
 Route::get('/like/{id}', [LikeController::class, 'like'])->name('like_process');
@@ -26,11 +27,9 @@ Route::get('/like/{id}', [LikeController::class, 'like'])->name('like_process');
 Route::resource('/feed', FeedController::class, [
     'names' => [
         'index' => 'home',
+        'store' => 'upload_post',
+        'show' => 'show_post',
     ]
 ])->middleware('auth');
 
 Route::resource('/comment', CommentController::class);
-
-Route::get('/', function () {
-    return redirect('/feed');
-})->name('Home');

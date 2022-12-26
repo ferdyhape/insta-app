@@ -30,11 +30,16 @@ class PageController extends Controller
         // date_default_timezone_set('Asia/Jakarta');
         // $dateNowIndonesia = date('Y-m-d H:i:s');
 
-        $feed_user = Feed::where('user_id', auth()->user()->id)->where('like', '>', '0')->get();
+        $feed_user = Feed::where('user_id', auth()->user()->id)->where('like', '>', '0')->orderBy('created_at', 'desc')->get();
         return view('user.my-notifications', [
             "title" => "My Notification",
             "liked" => $feed_user,
             // "dateNow" => $dateNowIndonesia,
         ]);
+    }
+
+    public function auto_redirect()
+    {
+        return redirect('/feed');
     }
 }
