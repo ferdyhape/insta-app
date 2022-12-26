@@ -40,10 +40,10 @@ class CommentController extends Controller
             'user_id' => 'required',
             'feed_id' => 'required',
         ]);
-        // dd($validatedData);
+
         Comment::create($validatedData);
 
-        return redirect('/feed');
+        return redirect(url()->previous());
     }
 
     /**
