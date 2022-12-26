@@ -75,7 +75,12 @@ class FeedController extends Controller
      */
     public function show(Feed $feed)
     {
-        //
+        return view('feed.show', [
+            "title" => "See Feed",
+            "feed" => $feed,
+            "comment" => Comment::orderBy('created_at', 'DESC')->get(),
+            "like_details" => LikeDetail::all(),
+        ]);
     }
 
     /**

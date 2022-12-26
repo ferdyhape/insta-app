@@ -19,6 +19,6 @@ class LikeController extends Controller
         $likedetail->user_id = auth()->user()->id;
         $likedetail->save();
 
-        return redirect()->route('home');
+        return redirect(url()->previous());
     }
 }
